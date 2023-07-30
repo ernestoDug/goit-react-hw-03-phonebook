@@ -7,7 +7,7 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 
-let begincontact = [
+const begincontact = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' }, 
   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
@@ -55,10 +55,8 @@ export class App extends Component {
     const backFromLocal = JSON.parse(localStorage.getItem('contacts'));
     // console.log(backFromLocal,  "хай, локал сторидж існує...");
     // перевірка сховища
-    if ( backFromLocal) { this.setState({ contacts: backFromLocal })}
-    else { this.setState({ contacts: begincontact });
+    if ( backFromLocal) { this.setState({ contacts: backFromLocal })
   }
-    // this.setState({contacts: backFromLocal})
   }
 
   //метод пропс  для  зняття воду з інпуту фільтру
