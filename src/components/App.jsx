@@ -51,10 +51,11 @@ export class App extends Component {
   }
   // вихід з л/с
   componentDidMount() {
+
     const backFromLocal = JSON.parse(localStorage.getItem('contacts'));
     // console.log(backFromLocal,  "хай, локал сторидж існує...");
     // перевірка сховища
-    if ( backFromLocal.length !== 0) { this.setState({ contacts: backFromLocal })}
+    if ( backFromLocal) { this.setState({ contacts: backFromLocal })}
     else { this.setState({ contacts: begincontact });
   }
     // this.setState({contacts: backFromLocal})
