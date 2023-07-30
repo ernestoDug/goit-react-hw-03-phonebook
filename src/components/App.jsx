@@ -54,9 +54,9 @@ export class App extends Component {
     const backFromLocal = JSON.parse(localStorage.getItem('contacts'));
     // console.log(backFromLocal,  "хай, локал сторидж існує...");
     // перевірка сховища
-    backFromLocal.length !== 0
-      ? this.setState({ contacts: backFromLocal })
-      : this.setState({ contacts: begincontact });
+    if ( backFromLocal.length !== 0) { this.setState({ contacts: backFromLocal })}
+    else { this.setState({ contacts: begincontact });
+  }
     // this.setState({contacts: backFromLocal})
   }
 
